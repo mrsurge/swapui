@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Determine app directory: source tree (dev) or installed path
+APP_DIR="$DIR"
+if [ ! -f "$APP_DIR/swap_manager_gui.py" ]; then
+  APP_DIR="/usr/local/lib/swap-manager"
+fi
+
+# Use venv if present next to the app
+if [ -x "$APP_DIR/.venv/bin/python" ]; then
+  PYBIN="$APP_DIR/.venv/bin/python"
+else
+  PYBIN="python3"
+fi
+
+exec "$PYBIN" "$APP_DIR/swap_manager_gui.py" "$@"

@@ -1,0 +1,2 @@
+# Intentionally empty.
+# GTK introspection (PyGObject) comes from system packages.

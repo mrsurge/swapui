@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Swap Manager
+Comment=Manage Linux swap files and settings
+Exec=swap-manager
+Icon=swap-manager
+Terminal=false
+Categories=System;Settings;
+
